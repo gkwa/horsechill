@@ -136,5 +136,5 @@ function main {
     dotnet build
     dotnet pack
     Check
-    Check-All
+    CheckAll
 }
