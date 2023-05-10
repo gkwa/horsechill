@@ -27,7 +27,6 @@ function Update-Csproj {
   </PropertyGroup>
 
 </Project>
-
 "@ | Out-File -Encoding ASCII $csproj
 
 }
