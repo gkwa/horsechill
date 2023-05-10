@@ -92,13 +92,10 @@ function Update-Nuspec {
 </package>
 
 "@ | Out-File -Encoding ASCII $nuspec
-
     Get-Content $nuspec
-
 }
 
 Function GetExe {
-
     $url = "https://github.com/taylormonacelli/reactnut/releases/latest/download/reactnut_Windows_x86_64.zip"
     $filename = Split-Path -Leaf -Path $url
     Get-FileIfNotExists $url "c:\Windows\Temp\$filename"
@@ -108,10 +105,7 @@ Function GetExe {
     $exe = Get-ChildItem -Path reactnut_Windows_x86_64 -Include *.exe -Recurse | Select-Object -ExpandProperty Fullname
     $exe
     Get-ChildItem ./reactnut_Windows_x86_64/reactnut.exe
-
 }
-
-
 
 function main {
     $ErrorActionPreference = "Stop"
