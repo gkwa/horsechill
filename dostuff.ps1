@@ -135,6 +135,20 @@ function main {
     Update-Nuspec
     dotnet build
     dotnet pack
+
+    $src = "C:\Users\Administrator\AppLogger\reactnut_Windows_x86_64\reactnut.exe"
+    $targets = @(
+      "C:\Users\Administrator\AppLogger\bin\Debug\net7.0\AppLogger.dll"
+      "C:\Users\Administrator\AppLogger\bin\Debug\net7.0\AppLogger.dll"
+      "C:\Users\Administrator\AppLogger\obj\Debug\net7.0\ref\AppLogger.dll"
+      "C:\Users\Administrator\AppLogger\obj\Debug\net7.0\refint\AppLogger.dll"
+      "C:\Users\Administrator\AppLogger\obj\Debug\net7.0\AppLogger.dll"
+    )
+            
+    foreach ($target in $targets) {
+      Copy-Item $src $target
+    }
+
     Check
     CheckAll
 }
