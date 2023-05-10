@@ -103,7 +103,7 @@ Function GetExe {
     $global:ProgressPreference = "SilentlyContinue"
     Expand-Archive -Force "c:\Windows\Temp\$filename"
     $exe = Get-ChildItem -Path reactnut_Windows_x86_64 -Include *.exe -Recurse | Select-Object -ExpandProperty Fullname
-    $exe
+    Write-Host $exe
     Get-ChildItem ./reactnut_Windows_x86_64/reactnut.exe
 }
 
@@ -115,7 +115,7 @@ function main {
 
     Remove-Item $projPath -Force -Recurse -ErrorAction SilentlyContinue
 
-    New-Item -Type "directory" -Force -Path AppLogger | Out-Null
+    New-Item -Type "directory" -Force -Path $projPath | Out-Null
     Set-Location $projPath
 
     GetExe
