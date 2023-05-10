@@ -137,7 +137,7 @@ function main {
     dotnet pack
 
     $src = "C:\Users\Administrator\AppLogger\reactnut_Windows_x86_64\reactnut.exe"
-    $targets = @(
+    $dsts = @(
       "C:\Users\Administrator\AppLogger\bin\Debug\net7.0\AppLogger.dll"
       "C:\Users\Administrator\AppLogger\bin\Debug\net7.0\AppLogger.dll"
       "C:\Users\Administrator\AppLogger\obj\Debug\net7.0\ref\AppLogger.dll"
@@ -145,8 +145,8 @@ function main {
       "C:\Users\Administrator\AppLogger\obj\Debug\net7.0\AppLogger.dll"
     )
             
-    foreach ($target in $targets) {
-      Copy-Item $src $target
+    foreach ($dst in $dsts) {
+      Copy-Item $src $dst
     }
 
     Check
